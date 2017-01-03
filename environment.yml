@@ -1,4 +1,5 @@
 name: pytest-presentation
 dependencies:
+- coverage
 - pytest=3.0.5
 - python=3.6.0
