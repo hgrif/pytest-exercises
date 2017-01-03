@@ -1,0 +1,4 @@
+name: pytest-presentation
+dependencies:
+- pytest=3.0.5
+- python=3.6.0
