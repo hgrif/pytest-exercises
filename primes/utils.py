@@ -13,3 +13,11 @@ def find_next_prime(number):
         index += 1
         if is_prime(index):
             return index
+
+
+def load_next_prime(file):
+    with open(file, 'r') as f:
+        contents = f.read().split()
+    if len(contents) != 1:
+        raise RuntimeError("Too many elements")
+    return find_next_prime(int(contents[0]))
