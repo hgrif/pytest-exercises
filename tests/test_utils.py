@@ -29,6 +29,10 @@ class TestIsPrime(object):
         """Create a unit test with a simple assert statement."""
         assert is_prime(3) is True
 
+    def test_one(self):
+        """Exercise 1: Adjust is_prime() to let this test pass."""
+        assert is_prime(1) is False
+
     def test_zero(self):
         """Exercise 1: Adjust is_prime() to let this test pass."""
         assert is_prime(0) is False
