@@ -1,7 +1,7 @@
 # pytest exercises
 
 Exercises for the pytest presentation.
-Inspired on [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/).
+Inspired by [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/).
 
 
 ## Setup
@@ -55,7 +55,7 @@ $ pip install --requirement requirements.txt
 $ pip install --editable .
 ```
 
-* Check that you can use `primes`:
+* Check that you can use `primes` and exit Python:
 
 ```{bash}
 $ python
@@ -65,12 +65,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> from primes import utils
 >>> utils.is_prime(5)
 True
+>>> exit()
 ```
 
 
 ## Exercises
 
-The exercises are in `tests/test_utils.py`.
+The exercises are in `tests/test_utils.py`, read the code for explanations and exercises.
 
 * Exercise 1 & 2: pytest basics
 * Exercise 3: fixtures
