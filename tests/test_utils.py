@@ -51,7 +51,7 @@ class TestIsPrime(object):
         """Exercise 2: Test that negative numbers result in False and adjust
         is_prime().
         """
-        pass
+        assert is_prime(-1) is False
 
 
 """Fixtures.
@@ -99,11 +99,9 @@ def test_load_next_prime_single(tmpdir):
 
     More info: http://doc.pytest.org/en/latest/tmpdir.html
     """
-
-    p = 'REPLACE THIS WITH a py.path.local object'
-    # Uncomment the next lines after replacing p
-    # p.write('5')
-    # assert load_next_prime(str(p)) == 7
+    p = tmpdir.mkdir('sub').join('file.txt')
+    p.write('5')
+    assert load_next_prime(str(p)) == 7
 
 
 """Exceptions.
@@ -118,7 +116,8 @@ def test_load_next_prime_multiple(tmpdir):
     Use pytest.raises to check that a RunTimeError is raised when a file
     contains multiple numbers.
     """
-    p = 'REPLACE THIS WITH a py.path.local object'
-    # Uncomment the next lines after replacing p
-    # p.write('5\n7')
-    # assert p.read() == '5\n7'  # Our file should contain two numbers.
+    p = tmpdir.mkdir('sub').join('file.txt')
+    p.write('5\n7')
+    assert p.read() == '5\n7'  # Our file should contain two numbers.
+    with pytest.raises(RuntimeError):
+        load_next_prime(str(p))
